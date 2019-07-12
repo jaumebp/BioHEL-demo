@@ -9,7 +9,7 @@
 # The combinations of all config file x all pairs of (training,test) files x number of repeititons will be launched
 # with the amount of parallelism specified in $parallelRuns
 
-my $numRepetitions=10;
+my $numRepetitions=25;
 my $currentRep=1;
 my $programa="biohelcuda";
 
@@ -52,7 +52,7 @@ while($currentRep<=$numRepetitions) {
 	} else {
 		my $myTime=`date`;
 		chomp $myTime;
-		`echo $myTime: Executant la prova $prefixRun >> proves.log`;
+		`echo $myTime: Running $prefixRun >> experiments.log`;
 		$dataFileAct++;
 		if($dataFileAct==@dataFiles) {
 			$dataFileAct=0;
